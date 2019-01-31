@@ -46,7 +46,7 @@ app.post('/login.html', urlencodedParser, function (req, res) {
                 res.sendFile(linuxDirectory + "/" + "login.html");
             } else {
                 db.close();
-                res.sendFile(linuxDirectory + "/" + "login.html");
+                res.sendFile(linuxDirectory + "/" + "registration.html");
             }
         });
 
@@ -76,7 +76,6 @@ app.post('/mainPage.html', urlencodedParser, function (req, res) {
                 } else {
                     db.close();
                     res.sendFile(linuxDirectory + "/" + "login.html");
-                    alert("Wrong Login or Password");
                 }
             }
         });
