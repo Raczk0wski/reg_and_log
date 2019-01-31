@@ -14,13 +14,14 @@
 
 <body onload="">
 <div class="form-style-5">
-    <form name="registrationForm" action="http://localhost:8080/login.html" onsubmit="return validateFormRegistration()">
+    <form name="registrationForm" action="http://localhost:8080/login.html" onsubmit="return validateFormRegistration()"
+          method="post">
         <fieldset>
-            <label type="fname">Registration</label>
-            <input type="text" name="Name" placeholder="Your Name *">
-            <input type="email" name="email" placeholder="Your Email *">
-            <input type="Password" name="Password" placeholder="Your Password *">
-            <input type="Password" name="ConfirmPassword" placeholder="Repeat Password *">
+            <label>Registration</label>
+            <input type="text" name="name" placeholder="Your Name *">
+            <input type="email" name="registrationEmail" placeholder="Your Email *">
+            <input type="password" name="registrationPassword" placeholder="Your Password *">
+            <input type="password" name="confirmPassword" placeholder="Repeat Password *">
         </fieldset>
         <input type="submit" value="Submit">
     </form>

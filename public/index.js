@@ -23,8 +23,8 @@ function validateForm() {
         return false;
     }
 }
-function validateFormRegistration() {
 
+function validateFormRegistration() {
     const Name = document.forms["registrationForm"]["Name"].value;
     if (Name === "") {
         alert("Please specify login!");
@@ -45,19 +45,18 @@ function validateFormRegistration() {
     if (ConfirmPassword === "") {
         alert("Please specify ConfirmPassword!");
         return false;
-    }else if(ConfirmPassword!==Password)
-    {
+    } else if (ConfirmPassword !== Password) {
         alert("Your passwords are different!");
         return false;
     }
 }
 
-function booked(){
+function booked() {
     document.getElementById('cancel').style.display = "block";
     document.getElementById('book').style.display = "none";
 }
 
-function cancel(){
+function cancel() {
     document.getElementById('cancel').style.display = "none";
     document.getElementById('book').style.display = "block";
 }

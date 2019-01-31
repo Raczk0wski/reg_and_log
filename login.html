@@ -11,11 +11,11 @@
 
 <body onload="">
 <div class="form-style-5">
-    <form name="loginForm" action="http://localhost:8080/mainPage.html" onsubmit="return validateForm()">
+    <form name="loginForm" action="http://localhost:8080/mainPage.html" onsubmit="return validateForm()" method="post">
         <fieldset>
-            <label type="fname">Login</label>
-            <input type="text" name="login" placeholder="Your login *">
-            <input type="password" name="password" placeholder="Your password *">
+            <label>Login</label>
+            <input type="email" name="loginEmail" placeholder="Your email *">
+            <input type="password" name="loginPassword" placeholder="Your password *">
         </fieldset>
         <input type="submit" value="Submit">
     </form>
