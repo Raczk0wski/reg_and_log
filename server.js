@@ -2,7 +2,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
-var cookieParser = require('cookie-parser');
+var alert = require('alert-node');
+
 
 var MongoClient = require('mongodb').MongoClient;
 var mongodb_url = 'mongodb://localhost:27017/';
@@ -47,6 +48,7 @@ app.post('/login.html', urlencodedParser, function (req, res) {
             } else {
                 db.close();
                 res.sendFile(linuxDirectory + "/" + "registration.html");
+                alert('There is existing user with such email, try another one!')
             }
         });
 
@@ -68,6 +70,7 @@ app.post('/mainPage.html', urlencodedParser, function (req, res) {
                 console.log(err);
                 db.close();
                 res.sendFile(linuxDirectory + "/" + "login.html");
+                alert('Wrong email or password')
             } else {
                 console.log(result);
                 if (result.login === user.login && result.password === user.password) {
@@ -76,6 +79,7 @@ app.post('/mainPage.html', urlencodedParser, function (req, res) {
                 } else {
                     db.close();
                     res.sendFile(linuxDirectory + "/" + "login.html");
+                    alert('Wrong email or password')
                 }
             }
         });
