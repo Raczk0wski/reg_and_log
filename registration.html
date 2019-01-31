@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation</title>
+    <link rel="stylesheet" href="public/style.css">
+    <script src="public/index.js">
+        Validate();
+    </script>
+
+</head>
+
+<body onload="">
+<div class="form-style-5">
+    <form name="registrationForm" action="http://localhost:8080/login.html" onsubmit="return validateFormRegistration()">
+        <fieldset>
+            <label type="fname">Registration</label>
+            <input type="text" name="Name" placeholder="Your Name *">
+            <input type="email" name="email" placeholder="Your Email *">
+            <input type="Password" name="Password" placeholder="Your Password *">
+            <input type="Password" name="ConfirmPassword" placeholder="Repeat Password *">
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+

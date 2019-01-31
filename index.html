@@ -1,0 +1,34 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library registration system</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css"/>
+    <script>
+        function redirectToRegistrationForm() {
+            location.replace("http://localhost:8080/registration.html")
+        }
+
+        function redirectToLoginForm() {
+            location.replace("http://localhost:8080/login.html")
+        }
+    </script>
+</head>
+
+<body>
+
+
+<div class="form-style-5">
+    <h2>Library registration book </h2>
+    <div>
+        <button onclick="redirectToLoginForm()" class="myButton" type="button">Login</button>
+    </div>
+
+    <div>
+        <button onclick="redirectToRegistrationForm()" class="myButton" type="button">Register</button>
+    </div>
+
+</div>
+</body>
