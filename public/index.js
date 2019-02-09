@@ -1,15 +1,3 @@
-function redirectToRegistrationForm() {
-    location.replace("http://localhost:8080/registration.html")
-}
-
-function redirectToLoginForm() {
-    location.replace("http://localhost:8080/login.html")
-}
-
-function redirectToMainPageForm() {
-    location.replace("mainPage.html")
-}
-
 function validateForm() {
     const login = document.forms["loginForm"]["login"].value;
     if (login === "") {

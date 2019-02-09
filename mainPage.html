@@ -4,33 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Library</title>
     <link rel="stylesheet" href="public/style.css">
     <script src="public/index.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#showBooks").click(function () {
+                $.get("/books", function (result) {
+                    for (i in result.books) {
+                        $("#container2").append('<div class="rectandle1">' +
+                            '<div class="Title"><b>' + result.books[i].title + '</b></div>' +
+                            '<div class="description">' + result.books[i].text + '</div>' +
+                            '<div class="description"><h4>Booked:' + result.books[i].booked + '</h4></div>' +
+
+                            '<div id="book" class="Button1" style="display:block;">\n' +
+                            '<button onclick="booked()" class="Button" type="button">Book</button>\n' +
+                            '</div>' +
+
+                            '<div id="cancel" class="Button1" style="display:none;">\n' +
+                            '<button onclick="cancel()" class="Button" type="button">Cancel a booking</button>\n' +
+                            '</div>' +
+
+                            '</div>'
+                        );
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
-<div id="container">
-    <div class="rectandle1">
-
-        <div class="Title"><b>Slepnąc od świateł</b></div>
-        <div class="description">
-            Ślepnąc od świateł to kolejna miejska powieść Jakuba Żulczyka, jednego z najpopularniejszym polskich pisarzy
-            młodego pokolenia.
-            Historia przedstawia poruszający obraz współczesnych realiów miejskiego życia, gdzie narkotyki stają się
-            towarem pierwszej potrzeby.
-            Książka jest pozycją obowiązkową dla fanów mocnej prozy i charakterystycznej dla Żulczyka kontrowersyjnej
-            konwencji.
-        </div>
-
-        <div id="book" class="Button1" style="display:block;">
-            <button onclick="booked()" class="Button" type="button">Book</button>
-        </div>
-
-        <div id="cancel" class="Button1" style="display:none;">
-            <button onclick="cancel()" class="Button" type="button">Cancel a booking</button>
-        </div>
+<div id="container1" class="container">
+    <div id="showBooks" class="Button1">
+        <button class="Button" type="button">Show Books</button>
     </div>
+</div>
+<div id="container2" class="container">
 
 </div>
 </body>

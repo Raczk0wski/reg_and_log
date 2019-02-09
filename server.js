@@ -86,6 +86,27 @@ app.post('/mainPage.html', urlencodedParser, function (req, res) {
     });
 });
 
+app.get('/books', urlencodedParser, function (req, res) {
+    MongoClient.connect(mongodb_url, function (err, db) {
+        if (err) throw err;
+        var book = {
+            title: "Eloquent JavaScript, Second Edition"
+        };
+
+        var dbo = db.db("library");
+        dbo.collection("books").findOne(book, function (err, result) {
+            if (err) {
+                console.log(err);
+                db.close();
+            }
+            console.log(result);
+            res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify(result));
+            db.close();
+        });
+    });
+});
+
 var server = app.listen(8080, function () {
     console.log("App is running");
 });

@@ -145,7 +145,7 @@ body {
 }
 
 
-#container
+.container
 {
     width: 1000px;
     margin-left: auto;
@@ -156,7 +156,7 @@ body {
 {
     width: 850px;
     margin: 100px;
-    height: 200px;
+    height: 250px;
     background-color: #d2d9dd;
     text-align: center;
     padding: 10px;
