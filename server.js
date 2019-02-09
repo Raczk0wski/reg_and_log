@@ -105,6 +105,27 @@ app.get('/books', urlencodedParser, function (req, res) {
     });
 });
 
+app.get('/books', urlencodedParser, function (req, res) {
+    MongoClient.connect(mongodb_url, function (err, db) {
+        if (err) throw err;
+        var book = {title: req.query.title};
+
+        var dbo = db.db("library");
+        dbo.collection("books").find(book).toArray(function (err, result) {
+            if (err) {
+                console.log(err);
+                db.close();
+            }
+
+            var books = {books: result};
+            res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify(books));
+            db.close();
+        });
+
+    });
+});
+
 var server = app.listen(8080, function () {
     console.log("App is running");
 });

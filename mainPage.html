@@ -8,6 +8,7 @@
     <title>Library</title>
     <link rel="stylesheet" href="public/style.css">
     <script src="public/index.js"></script>
+    <script src="public/find.js"></script>
     <script>
         $(document).ready(function () {
             $("#showBooks").click(function () {
@@ -36,11 +37,17 @@
 </head>
 
 <body>
-<div id="container1" class="container">
-    <div id="showBooks" class="Button1">
+<div>
+    <div id="showBooks" class="Button2">
         <button class="Button" type="button">Show Books</button>
     </div>
+    <form onsubmit=find()>
+        Find a book:<br>
+        <input type="text" name="title" value="Learning JavaScript Design Patterns"><br>
+        <input id="findBook" type="submit" value="Submit">
+    </form>
 </div>
+
 <div id="container2" class="container">
 
 </div>
